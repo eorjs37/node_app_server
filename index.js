@@ -25,6 +25,14 @@ app.get("/api/dummy",(_,res)=>{
 	})
 })
 
+app.post("/api/savedummy",({res})=>{
+	console.log("call savedummy");
+
+	res.status(200).json({
+		"success":true
+	})
+})
+
 // 서버 실행
 app.listen(PORT, () => {
   console.log(`Listen : ${PORT}`);
