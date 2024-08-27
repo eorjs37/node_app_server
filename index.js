@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require('cors');
 const PORT = 3000;
-
+const routes = require('./src/router')
 // 정적 파일 불러오기
 app.use(express.static(__dirname + "/public"));
 
@@ -32,6 +32,8 @@ app.post("/api/savedummy",({res})=>{
 		"success":true
 	})
 })
+
+app.use("/api",routes)
 
 // 서버 실행
 app.listen(PORT, () => {
