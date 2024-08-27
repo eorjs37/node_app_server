@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-router.post("/userdummy1",({res}) =>{
+router.get("/userdummy1",({res}) =>{
+	console.log("call userdummy1");
+
 	res.status(200).json({
 		success:true
 	})

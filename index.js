@@ -16,23 +16,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-//더미 api
-app.get("/api/dummy",(_,res)=>{
-	console.log("call /api/dummy");
-
-	res.status(200).json({
-		"message":"TEST"
-	})
-})
-
-app.post("/api/savedummy",({res})=>{
-	console.log("call savedummy");
-
-	res.status(200).json({
-		"success":true
-	})
-})
-
+//api 경로
 app.use("/api",routes)
 
 // 서버 실행
