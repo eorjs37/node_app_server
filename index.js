@@ -4,6 +4,9 @@ const app = express();
 const cors = require('cors');
 const PORT = 3000;
 const routes = require('./src/router')
+const mariadb = require('./src/database/mariadb')
+//데이터베이스
+mariadb.connect();
 // 정적 파일 불러오기
 app.use(express.static(__dirname + "/public"));
 
