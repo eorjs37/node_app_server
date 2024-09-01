@@ -5,7 +5,7 @@ router.get("/dummy",(_,res)=>{
 	console.log("call /api/dummy");
 
 	res.status(200).json({
-		"message":"TEST"
+		"message":"TEST1"
 	})
 })
 

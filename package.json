@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+		"serve":"pm2 start ecosystem.config.js && pm2 log"
   },
   "author": "",
   "license": "ISC",
