@@ -6,7 +6,10 @@ const PORT = 3000;
 const routes = require('./src/router')
 const mariadb = require('./src/database/mariadb')
 //데이터베이스
-mariadb.connect();
+mariadb.connect((err)=>{
+	if(err) throw err;
+	console.log("Connected!");
+});
 // 정적 파일 불러오기
 app.use(express.static(__dirname + "/public"));
 
