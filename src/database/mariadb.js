@@ -1,6 +1,6 @@
 const mariadb = require('mysql');
 
-const conn = mariadb.createConnection(
+const pool = mariadb.createPool(
 	{
 		host:'localhost',
 		port:13307,
@@ -10,4 +10,15 @@ const conn = mariadb.createConnection(
 	}
 )
 
-module.exports = conn;
+function getConnection(callback) {
+	pool.getConnection((err,conn)=>{
+		if(!err){
+			callback(conn)
+		}else{
+			console.log(err);
+
+		}
+	})
+}
+
+module.exports = getConnection;
