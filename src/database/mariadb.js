@@ -15,10 +15,10 @@ function getConnection(callback) {
 		if(!err){
 			callback(conn)
 		}else{
-			console.log(err);
+			throw err;
 
 		}
 	})
 }
 
-module.exports = getConnection;
+module.exports = pool;
