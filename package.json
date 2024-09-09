@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-		"serve":"pm2 start ecosystem.config.js && pm2 log"
+		"serve":"pm2 kill && pm2 start ecosystem.config.js && pm2 log"
   },
   "author": "",
   "license": "ISC",
