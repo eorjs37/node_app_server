@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../database/mariadb');
-router.post("/",(_,res) =>{
+router.post("/",(req,res) =>{
+	const { todo } = req.body
+
 	pool.getConnection((err,conn)=>{
 		if(err) return;
-		conn.query("INSERT INTO ToDo(todo) VALUES('할일4')",(queryErr,result)=>{
+		conn.query(`INSERT INTO ToDo(todo) VALUES('${todo}')`,(queryErr,result)=>{
 			if(!queryErr){
 				res.status(200)
 				.json({
@@ -17,6 +19,7 @@ router.post("/",(_,res) =>{
 		})
 	})
 })
+
 
 router.get("/",(_,res)=>{
 	pool.getConnection((err,conn)=>{
